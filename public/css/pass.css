@@ -1,0 +1,21 @@
+.volv {
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff
+}
+.formpass {
+    border: solid black;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background: gray;
+    padding-top: 200px;
+}
+.form-control {
+    width: 300px;
+	text-align: center;
+	margin:auto;
+}
