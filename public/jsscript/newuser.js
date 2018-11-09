@@ -10,7 +10,7 @@ window.onload = function() {
     newuser.domicilio = document.querySelector("#Domicilio").value;
     newuser.ciudad = document.querySelector("#inputCity").value;
     newuser.pais = document.querySelector("#inputCountry").value;
-    location.href = "/html/ingresopanel.html";
+    
     
     $.ajax({
       method: "POST",
@@ -18,6 +18,7 @@ window.onload = function() {
       data: { usuario: JSON.stringify(newuser) },
       success: function(data) {
         console.log(data);
+        window.location.href = "/ingresopanel";
       }
     });
   });

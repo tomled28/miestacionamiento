@@ -8,46 +8,41 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById("map"), options);
 
     var iconBase = "https://maps.google.com/mapfiles/kml/shapes/";
-    var infowindow = new google.maps.InfoWindow({
-        
-      });
-    
+    var infowindow = new google.maps.InfoWindow({});
+
     //haces el ajax.
     //el ajax retorna en success un data.
     //haces un loop de data.
     //data.map(p => {addMarker({lat: p.lat, p.lng})})
-    $.ajax ({
+    $.ajax({
       method: "GET",
       url: "/get-points",
-      success: function(data){
-        data = JSON.parse (data)
-        data.map(p => {addMarker({lat: parseFloat(p.lat),lng: parseFloat(p.lng)})}
-        )
+      success: function(data) {
+        data = JSON.parse(data);
+        data.map(p => {
+          addMarker(p);
+        });
       }
-    })
-    
-    function addMarker(coords) {
+    });
+    var currentInfoWindow = undefined;
+    function addMarker(data) {
       var marker = new google.maps.Marker({
-        position: coords,
+        position: { lat: parseFloat(data.lat), lng: parseFloat(data.lng) },
         map: map,
         icon: iconBase + "parking_lot_maps.png"
       });
-      
-     /* var infowindow = new google.maps.InfoWindow({
-        
-      });
-  
-      var marker = new google.maps.Marker({
-        position: addMarker,
-        map: map,
-        
-      });
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });*/
-    }
 
-    
+      marker.addListener("click", function() {
+        var infowindow = new google.maps.InfoWindow({
+          content: "<h1>" + data.nombre + "</h1>"
+        });
+        if (currentInfoWindow != null) {
+          currentInfoWindow.close();
+        }
+        infowindow.open(map, marker);
+        currentInfoWindow = infowindow;
+      });
+    }
 
     currentPositionMarker = new google.maps.Marker({
       map: map,

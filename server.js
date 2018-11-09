@@ -22,7 +22,7 @@ app.post("/nuevousuario", function(req, res) {
 });
 
 app.get("/ingresopanel", function(req, res) {
-  res.sendFile(path.join(__dirname + "/public/html/controlpanel.html"));
+  res.sendFile(path.join(__dirname + "/public/html/ingresopanel.html"));
 });
 
 app.post("/ingresopanel", function(req, res) {
@@ -32,17 +32,12 @@ app.post("/ingresopanel", function(req, res) {
 	console.log(user.password , userok.inputContrasena , user.nuevoemail , userok.inputUsuario) 
 	  if (user.password == userok.inputContrasena && user.nuevoemail == userok.inputUsuario) {
 			return user;
-		}
-		else {
-			res.json({ status: 404 });
-		}
-	  return [];
-  });
-  
+		}});
+		
   if (results.length > 0) {
     res.json(results[0]);
   } else {
-    res.json({ status: 404 });
+    res.json({ status: "Usuario o contraseña invalido"});
   }
 });
 
