@@ -21,6 +21,10 @@ app.post("/nuevousuario", function(req, res) {
   res.json({ status: 200 });
 });
 
+app.get("/nuevopassword", function(req, res) {
+  res.sendFile(path.join(__dirname + "/public/html/pass.html"));
+});
+
 app.get("/ingresopanel", function(req, res) {
   res.sendFile(path.join(__dirname + "/public/html/ingresopanel.html"));
 });
@@ -51,24 +55,44 @@ var estacionamientos = [{
 	lat:'-31.311359',
 	lng: '-64.281833',
 	nombre: 'playa1',
-	autos: '$40 la hora',
-	camionetas: '45$ la hora',
+	precios: 'Precios',
+	motos: 'Motos $20 la hora',
+	autos: 'Autos $40 la hora',
+	camionetas: 'Camionetas 45$ la hora',
+	espaciodisponible: 'Espacio Disponible',
+	espacio: 0 ,
+},
+{
+	lat:'-31.318912',
+	lng: '-64.282606',
+	nombre: 'playa2',
+	precios: 'Precios',
+	motos: 'Motos $25 la hora',
+	autos: 'Autos $40 la hora',
+	camionetas: 'Camionetas 45$ la hora',
+	espaciodisponible: 'Espacio Disponible',
 	espacio: 0 ,
 },
 {
 	lat:'-31.313017',
 	lng: '-64.285291',
-	nombre: 'playa2',
-	autos: '$45 la hora',
-	camionetas: '50$ la hora',
+	nombre: 'playa3',
+	precios: 'Precios',
+	motos: 'motos $30 la hora',
+	autos: 'Autos $45 la hora',
+	camionetas: 'Camionetas 50$ la hora',
+	espaciodisponible: 'Espacio Disponible',
 	espacio: 0 ,
 },
 {
 	lat:'-31.316132',
 	lng: '-64.274853',
-	nombre: 'playa3',
-	autos: '$30 la hora',
-	camionetas: '35$ la hora',
+	nombre: 'playa4',
+	precios: 'Precios',
+	motos: 'motos $18 la hora',
+	autos: 'Autos $30 la hora',
+	camionetas: 'Camionetas 35$ la hora',
+	espaciodisponible: 'Espacio Disponible',
 	espacio: 0 ,
 }
 ]

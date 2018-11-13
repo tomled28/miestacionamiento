@@ -34,7 +34,18 @@ function initMap() {
 
       marker.addListener("click", function() {
         var infowindow = new google.maps.InfoWindow({
-          content: "<h1>" + data.nombre + "</h1>"
+          content: 
+    "<h2>" + data.nombre + "</h2>" +
+		"<h4> " +data.precios+ "</h4>" +
+    "<span>" + data.motos + "</span>" + 
+    "<br>" +
+    "<span>" + data.autos + "</span>" +
+    "<br>" +
+		"<span>" + data.camionetas + "</span>" +
+		"<h5>" + data.espaciodisponible +"</h5>" +
+		"<span>" + data.espacio + "</span>"
+	
+    
         });
         if (currentInfoWindow != null) {
           currentInfoWindow.close();
