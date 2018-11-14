@@ -1,1 +1,4 @@
-var apiKey = 'AIzaSyC0tyBu3UNqDz1ikw4Fi-tDMtLvL5ADCy0&callback';
+apiKey = AIzaSyC0tyBu3UNqDz1ikw4Fi-tDMtLvL5ADCy0&callback
+
+
+AIzaSyBOnRWk0DOkxzShklzmKfdoTXtevPXHb1Y

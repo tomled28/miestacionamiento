@@ -10,10 +10,10 @@ function initMap() {
     var iconBase = "https://maps.google.com/mapfiles/kml/shapes/";
     var infowindow = new google.maps.InfoWindow({});
 
-    //haces el ajax.
-    //el ajax retorna en success un data.
+    
+    // ajax retorna en success un data.
     //haces un loop de data.
-    //data.map(p => {addMarker({lat: p.lat, p.lng})})
+    //data.map(p => {addMarker})
     $.ajax({
       method: "GET",
       url: "/get-points",
@@ -34,18 +34,30 @@ function initMap() {
 
       marker.addListener("click", function() {
         var infowindow = new google.maps.InfoWindow({
-          content: 
-    "<h2>" + data.nombre + "</h2>" +
-		"<h4> " +data.precios+ "</h4>" +
-    "<span>" + data.motos + "</span>" + 
-    "<br>" +
-    "<span>" + data.autos + "</span>" +
-    "<br>" +
-		"<span>" + data.camionetas + "</span>" +
-		"<h5>" + data.espaciodisponible +"</h5>" +
-		"<span>" + data.espacio + "</span>"
-	
-    
+          content:
+            "<h2>" +
+            data.nombre +
+            "</h2>" +
+            "<h4> " +
+            data.precios +
+            "</h4>" +
+            "<span>" +
+            data.motos +
+            "</span>" +
+            "<br>" +
+            "<span>" +
+            data.autos +
+            "</span>" +
+            "<br>" +
+            "<span>" +
+            data.camionetas +
+            "</span>" +
+            "<h5>" +
+            data.espaciodisponible +
+            "</h5>" +
+            "<span>" +
+            data.espacio +
+            "</span>"
         });
         if (currentInfoWindow != null) {
           currentInfoWindow.close();

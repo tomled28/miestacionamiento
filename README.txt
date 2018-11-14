@@ -13,10 +13,37 @@ en el estacionamiento.
 Tambien tendra como informacion el nombre del estacionamiento y sus precios por hora.
 
 
+La pantalla principal contiene el mapa con los estacionamiento adheridos
+
 Home	
 	Mapa 
 
-Ruta 
-	login
-	Usuario:
-	Contraseña:
+
+Tendra una segunda pantalla donde cada dueño de estacionamiento podra acceder a traves de un login a su estacionamiento, crear
+un nuevo usuario o recuperar la contraseña.
+
+Ingreso Panel
+
+Email:
+Password:
+
+Pantalla Nuevo Usuario para crear el mismo
+
+Email:
+Password:
+Domicilio:
+Ciudad:
+Pais:
+
+Pantalla recuperar Password, que envia un E-mail al usuario devolviendo la contraseña
+
+
+
+Pantallas sin terminar:
+
+Panel de control, en esta pantalla hay un mapa de cada estacionamiento adherido, en el cual el usuario puede ver en tiempo
+real practicamente el lugar exacto disponible en el estacionamiento.
+
+
+ 
+
